@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Back up script is running"
+
+echo "Hello $(USER^)"
+echo "I will now back up your home directory, ${HOME} 
+
+currentdir=$(pwd)
+
+echo "You are running this script from ${PWD}"
+echo "Therefore, I will be saving this backup in ${PWD}
+
+tar -cf $currentdir/my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar $HOME/* 2>/dev/null
+
+echo "Backup Completed Successfully"
+
+exit 0;
